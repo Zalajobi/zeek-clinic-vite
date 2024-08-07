@@ -1,11 +1,13 @@
-import {Fragment, ReactNode} from "react";
+import { Fragment, ReactNode } from "react";
 import {
-  type color,
+  color,
   size,
   variant,
 } from "@material-tailwind/react/types/components/input";
+import { color as checkBoxColor } from "@material-tailwind/react/types/components/checkbox"
 import {CustomTypography} from "@component/global/Typography";
-import {Input} from "@material-tailwind/react";
+import {Checkbox, Input} from "@material-tailwind/react";
+import clsx from "clsx";
 
 interface CustomInputProps {
   onChange: (e: never) => void;
@@ -42,6 +44,18 @@ interface CustomInputProps {
   className?: string;
   show?: boolean;
   placeholder?: string;
+}
+
+interface CustomCheckBoxProps {
+  color: checkBoxColor;
+  name: string;
+  label: string;
+  onChange: (e: never) => void;
+  className?: string;
+  icon?: ReactNode;
+  ripple?: boolean;
+  disabled?: boolean;
+  rounded?: boolean;
 }
 
 export const TextInput = ({ name, type = "text", size = "lg", variant = "outlined", error, success, icon, label, color, onChange, className = "", show = true, placeholder }: CustomInputProps) => {
@@ -87,3 +101,28 @@ export const TextInput = ({ name, type = "text", size = "lg", variant = "outline
     </Fragment>
   );
 };
+
+export const CustomCheckBox = ({ color, name, label, onChange, className="", icon, ripple=true, disabled=false, rounded=false }: CustomCheckBoxProps) => {
+  const classes = clsx(
+    `text-[#0E0F17] text-xs text-[#6B7280] ${className}`,
+    {
+      "h-4 w-4 rounded-full border-gray-900/20 bg-gray-900/10 transition-all hover:scale-105 hover:before:opacity-0": rounded,
+    },
+  );
+
+  return (
+    <Fragment>
+      {/*// @ts-ignore*/}
+      <Checkbox
+        ripple={ripple}
+        icon={icon}
+        label={label}
+        name={name}
+        color={color}
+        disabled={disabled}
+        className={classes}
+        onChange={onChange}
+      />
+    </Fragment>
+  );
+}

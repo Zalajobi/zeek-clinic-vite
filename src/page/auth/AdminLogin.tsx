@@ -4,9 +4,9 @@ import {CustomTypography} from "@component/global/Typography";
 import {toFormikValidate} from "zod-formik-adapter";
 import {Form, Formik} from "formik";
 import {LoginRequestSchema} from "@schema/auth";
-import {TextInput} from "@component/global/Inputs";
+import {CustomCheckBox, TextInput} from "@component/global/Inputs";
 import {FaEye, FaEyeSlash} from "react-icons/fa6";
-import {CustomButton, CustomLinkButton} from "@component/global/Buttons";
+import { CustomButton } from "@component/global/Buttons";
 import {FcGoogle} from "react-icons/fc";
 import {GrGithub} from "react-icons/gr";
 
@@ -178,10 +178,12 @@ const AdminLogin = () => {
                         {/*RememberMe*/}
                         <div
                           className={`w-full grid grid-cols-2 gap-4 items-center my-2`}>
-                          {/*<CheckBox*/}
-                          {/*  checked={rememberMe}*/}
-                          {/*  click={() => setRememberMe(!rememberMe)}*/}
-                          {/*/>*/}
+                          <CustomCheckBox
+                            label="Remember Me"
+                            name="rememberMe"
+                            color="blue"
+                            onChange={handleChange("rememberMe")}
+                          />
 
                           <div className={`flex justify-end`}>
                             <a
@@ -194,14 +196,13 @@ const AdminLogin = () => {
                         </div>
 
                         <CustomButton
-                          color="green"
                           size="lg"
                           className="w-full mb-4 flex items-center justify-center"
                           loading={isLoading}
                           type="submit"
                           disabled={isSubmitting || !isValid}
                           colorScheme="primary"
-                          variant="outlined"
+                          variant="filled"
                         >
                           Login
                         </CustomButton>
