@@ -17,9 +17,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
+    "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],
@@ -27,6 +27,7 @@
       "@type/*": ["type/*"],
       "@lib/*": ["lib/*"],
       "@utils/*": ["utils/*"],
+      "@redux/*": ["redux/*"]
     }
   },
   "include": ["src"],
