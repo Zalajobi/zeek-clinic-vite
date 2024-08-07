@@ -85,7 +85,7 @@ export const CustomTypography = ({
   onClick,
 }: CustomTypographyProps) => {
   const classes = clsx(
-    `text-[#0E0F17] text-xs ${className}`,
+    `text-[#0E0F17] text-xs text-[#6B7280] ${className}`,
     {
       "leading-[44px] tracking-tight text-5xl font-bold": variant === "h1",
       "leading-[35px] tracking-normal text-4xl font-semibold": variant === "h2",
