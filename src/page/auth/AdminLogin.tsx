@@ -9,6 +9,8 @@ import {FaEye, FaEyeSlash} from "react-icons/fa6";
 import { CustomButton } from "@component/global/Buttons";
 import {FcGoogle} from "react-icons/fc";
 import {GrGithub} from "react-icons/gr";
+// @ts-ignore
+import LoginImage from "@asset/svg/SignIn.svg"
 
 const AdminLogin = () => {
   const {
@@ -25,7 +27,9 @@ const AdminLogin = () => {
   return (
     <Fragment>
       <div className="flex items-center justify-center bg-[#F9FAFB] dark:bg-black h-screen">
-        <div className="max-w-screen-xl items-center h-full w-full grid grid-cols-1 gap-4 p-10 md:grid-cols-2 md:gap-20">
+        <div
+          className="max-w-screen-xl items-center h-full w-full grid grid-cols-1 gap-4 p-10 md:grid-cols-2 md:gap-20"
+        >
           <div className="w-full flex flex-row rounded-[10px] shadow-2xl bg-white p-10 dark:bg-[#1F2A37]">
             <div className="flex flex-col w-full">
               <CustomTypography
@@ -212,6 +216,13 @@ const AdminLogin = () => {
                 </Formik>
               </Formik>
             </div>
+          </div>
+
+          <div className="w-full flex-row justify-center hidden md:flex">
+            <img
+              src={LoginImage}
+              alt={`Login Page`}
+            />
           </div>
         </div>
       </div>
