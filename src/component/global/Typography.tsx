@@ -85,7 +85,17 @@ export const CustomTypography = ({
   onClick,
 }: CustomTypographyProps) => {
   const classes = clsx(
-    `text-[#0E0F17] ${className}`,
+    `text-[#0E0F17] text-xs ${className}`,
+    {
+      "leading-[44px] tracking-tight text-5xl font-bold": variant === "h1",
+      "leading-[35px] tracking-normal text-4xl font-semibold": variant === "h2",
+      "leading-[30px] tracking-wide text-3xl font-medium": variant === "h3",
+      "leading-[26px] text-2xl font-normal": variant === "h4",
+      "leading-[24px] text-xl font-light": variant === "h5",
+      "leading-[21px] text-lg font-thin": variant === "h6",
+      "leading-[21px] text-base font-normal": variant === "p",
+      "text-[#0E0F17] text-sm font-light": variant === "small",
+    },
     size ? textSizeClassMap[size] : "",
     style,
     weight ? fontWeightClassMap[weight] : "",
@@ -100,14 +110,6 @@ export const CustomTypography = ({
     lineClamp ? textLineClampClassMap[lineClamp] : "",
     wrap ? textWrapClassMap[wrap] : "",
     numericVariant,
-    {
-      "leading-[44px]": variant === "h1",
-      "leading-[35px]": variant === "h2",
-      "leading-[30px]": variant === "h3",
-      "leading-[26px]": variant === "h4",
-      "leading-[24px]": variant === "h5",
-      "leading-[21px]": variant === "h6",
-    },
   );
 
   return (
