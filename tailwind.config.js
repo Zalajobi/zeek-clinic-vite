@@ -7,6 +7,7 @@ export default withMT({
     extend: {
       fontFamily: {
         rajdhani: ["Rajdhani", "sans-serif"],
+        nunito: ["nunito", "sans-serif"],
       }
     },
   },

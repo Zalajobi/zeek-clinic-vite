@@ -1,4 +1,4 @@
-/* src/assets/fonts/fonts.css */
+/*Rajdhani*/
 @font-face {
     font-family: 'Rajdhani';
     src: url('/src/asset/font/rajdhani/Rajdhani-Regular.ttf') format('truetype');
@@ -31,5 +31,18 @@
     font-family: 'Rajdhani';
     src: url('/src/asset/font/rajdhani/Rajdhani-SemiBold.ttf') format('truetype');
     font-weight: 600;
+    font-style: normal;
+}
+
+/*Nunito*/
+@font-face {
+    font-family: 'nunito';
+    src: url('/src/asset/font/nunito/NunitoSans-italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nunito';
+    src: url('/src/asset/font/nunito/NunitoSans-nonItalic.ttf') format('truetype');
     font-style: normal;
 }
