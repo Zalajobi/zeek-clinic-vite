@@ -1,10 +1,9 @@
 import {Fragment} from "react";
-import AdminDashboard from "@layout/admin/AdminDashboard";
 
 const Dashboard = () => {
   return (
     <Fragment>
-      <AdminDashboard/>
+      <h1>Admin Dashboard</h1>
     </Fragment>
   );
 };
