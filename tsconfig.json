@@ -21,14 +21,21 @@
     "noUnusedLocals": true,
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"],
-      "@pages/*": ["pages/*"],
+      "@component/*": ["component/*"],
+      "@hook/*": ["hook/*"],
+      "@page/*": ["page/*"],
       "@type/*": ["type/*"],
       "@lib/*": ["lib/*"],
-      "@utils/*": ["utils/*"],
-      "@redux/*": ["redux/*"]
-    }
+      "@util/*": ["util/*"],
+      "@redux/*": ["redux/*"],
+      "@schema/*": ["schema/*"],
+      "@asset/*": ["asset/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,12 +1,12 @@
-import axios, {AxiosRequestHeaders} from "axios";
-import {BASE_URL} from "@utils/config";
+import axios, { AxiosRequestHeaders } from "axios";
+import { BASE_URL } from "@util/config";
 import toast from "react-hot-toast";
-import {APIResponsePayload} from "@type/payloads.types";
+import { APIResponsePayload } from "@type/payloads.types";
 
 const userInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: 20000,
-  // withCredentials: true,
+  timeout: 7500,
+  withCredentials: true,
 });
 
 userInstance.interceptors.request.use(async (config) => {
@@ -48,7 +48,7 @@ userInstance.interceptors.response.use(
 
 export const axiosPostRequestHandler = async (url: string, data: any) => {
   try {
-    const { data:responseData } = await userInstance.post(url, data);
+    const { data: responseData } = await userInstance.post(url, data);
     return responseData as APIResponsePayload;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -61,7 +61,7 @@ export const axiosPostRequestHandler = async (url: string, data: any) => {
 
 export const axiosPutRequestHandler = async (url: string, data: never) => {
   try {
-    const { data:responseData } = await userInstance.put(url, data);
+    const { data: responseData } = await userInstance.put(url, data);
     return responseData as APIResponsePayload;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -74,7 +74,7 @@ export const axiosPutRequestHandler = async (url: string, data: never) => {
 
 export const axiosDeleteRequestHandler = async (url: string) => {
   try {
-    const { data:responseData } = await userInstance.delete(url);
+    const { data: responseData } = await userInstance.delete(url);
     return responseData as APIResponsePayload;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -87,7 +87,7 @@ export const axiosDeleteRequestHandler = async (url: string) => {
 
 export const axiosGetRequestHandler = async (url: string, params?: never) => {
   try {
-    const { data:responseData } = await userInstance.get(url, {
+    const { data: responseData } = await userInstance.get(url, {
       params,
     });
     return responseData as APIResponsePayload;
