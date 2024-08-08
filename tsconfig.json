@@ -29,7 +29,8 @@
       "@util/*": ["util/*"],
       "@redux/*": ["redux/*"],
       "@schema/*": ["schema/*"],
-      "@asset/*": ["asset/*"]
+      "@asset/*": ["asset/*"],
+      "@layout/*": ["layout/*"]
     },
     "plugins": [
       {
