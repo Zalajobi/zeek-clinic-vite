@@ -11,9 +11,9 @@ const AppRouter = () => {
         <Route path="/" element={<HomePage/>}/>
 
         {/*Admin Route*/}
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard/>}>
           <Route index element={<Dashboard/>}/>
-          <Route path="login" element={<AdminLogin />} />
         </Route>
       </Routes>
     </BrowserRouter>

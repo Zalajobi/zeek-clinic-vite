@@ -1,13 +1,16 @@
-import {FC, Fragment} from "react";
+import { Fragment } from "react";
 import { Card, List } from "@material-tailwind/react";
 import SidebarHeader from "@layout/admin/SidebarHeader";
 import {AdminSideBarItems} from "@component/routes";
 import {SidebarItemProps} from "@type/index.types";
 import SidebarItems from "@layout/SidebarItems";
-// import {ADMIN_ROUTES} from "@util/constants";
 
-const Sidebar: FC = () => {
-  const sidebarItems = AdminSideBarItems("0cd5e370-d3eb-42ae-b868-1ebf7f055098");
+interface SidebarProps {
+  siteId: string;
+}
+
+const Sidebar = ({ siteId }: SidebarProps) => {
+  const sidebarItems = AdminSideBarItems(siteId);
 
   return (
     // @ts-ignore
