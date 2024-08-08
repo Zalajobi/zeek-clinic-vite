@@ -4,9 +4,9 @@ import {
   size,
   variant,
 } from "@material-tailwind/react/types/components/input";
-import { color as checkBoxColor } from "@material-tailwind/react/types/components/checkbox"
-import {CustomTypography} from "@component/global/Typography";
-import {Checkbox, Input} from "@material-tailwind/react";
+import { color as checkBoxColor } from "@material-tailwind/react/types/components/checkbox";
+import { CustomTypography } from "@component/global/Typography";
+import { Checkbox, Input } from "@material-tailwind/react";
 import clsx from "clsx";
 
 interface CustomInputProps {
@@ -58,7 +58,21 @@ interface CustomCheckBoxProps {
   rounded?: boolean;
 }
 
-export const TextInput = ({ name, type = "text", size = "lg", variant = "outlined", error, success, icon, label, color, onChange, className = "", show = true, placeholder }: CustomInputProps) => {
+export const TextInput = ({
+  name,
+  type = "text",
+  size = "lg",
+  variant = "outlined",
+  error,
+  success,
+  icon,
+  label,
+  color,
+  onChange,
+  className = "",
+  show = true,
+  placeholder,
+}: CustomInputProps) => {
   return (
     <Fragment>
       {/*// @ts-ignore*/}
@@ -102,13 +116,21 @@ export const TextInput = ({ name, type = "text", size = "lg", variant = "outline
   );
 };
 
-export const CustomCheckBox = ({ color, name, label, onChange, className="", icon, ripple=true, disabled=false, rounded=false }: CustomCheckBoxProps) => {
-  const classes = clsx(
-    `text-[#0E0F17] text-xs text-[#6B7280] ${className}`,
-    {
-      "h-4 w-4 rounded-full border-gray-900/20 bg-gray-900/10 transition-all hover:scale-105 hover:before:opacity-0": rounded,
-    },
-  );
+export const CustomCheckBox = ({
+  color,
+  name,
+  label,
+  onChange,
+  className = "",
+  icon,
+  ripple = true,
+  disabled = false,
+  rounded = false,
+}: CustomCheckBoxProps) => {
+  const classes = clsx(`text-[#0E0F17] text-xs text-[#6B7280] ${className}`, {
+    "h-4 w-4 rounded-full border-gray-900/20 bg-gray-900/10 transition-all hover:scale-105 hover:before:opacity-0":
+      rounded,
+  });
 
   return (
     <Fragment>
@@ -125,4 +147,4 @@ export const CustomCheckBox = ({ color, name, label, onChange, className="", ico
       />
     </Fragment>
   );
-}
+};

@@ -15,9 +15,12 @@ export const useAdminLogin = () => {
     rememberMe: false,
   };
 
-  const handleLogin = async (payload:LoginRequestSchema) => {
+  const handleLogin = async (payload: LoginRequestSchema) => {
     setIsLoading((cur) => !cur);
-    const { data, message, success } = await axiosPostRequestHandler("/account/admin/login", payload);
+    const { data, message, success } = await axiosPostRequestHandler(
+      "/account/admin/login",
+      payload,
+    );
 
     if (success) {
       toast.success(message);

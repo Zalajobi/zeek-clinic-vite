@@ -1,17 +1,17 @@
 import { Fragment } from "react";
 import useAdminLogin from "@hook/auth/useAdminLogin";
-import {CustomTypography} from "@component/global/Typography";
-import {toFormikValidate} from "zod-formik-adapter";
-import {Form, Formik} from "formik";
-import {LoginRequestSchema} from "@schema/auth";
-import {CustomCheckBox, TextInput} from "@component/global/Inputs";
-import {FaEye, FaEyeSlash} from "react-icons/fa6";
+import { CustomTypography } from "@component/global/Typography";
+import { toFormikValidate } from "zod-formik-adapter";
+import { Form, Formik } from "formik";
+import { LoginRequestSchema } from "@schema/auth";
+import { CustomCheckBox, TextInput } from "@component/global/Inputs";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { CustomButton } from "@component/global/Buttons";
-import {FcGoogle} from "react-icons/fc";
-import {GrGithub} from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
+import { GrGithub } from "react-icons/gr";
 // @ts-ignore
-import LoginImage from "@asset/svg/SignIn.svg"
-import {ToasterConfig} from "@component/global/Toast";
+import LoginImage from "@asset/svg/SignIn.svg";
+import { ToasterConfig } from "@component/global/Toast";
 
 const AdminLogin = () => {
   const {
@@ -28,9 +28,7 @@ const AdminLogin = () => {
   return (
     <Fragment>
       <div className="flex items-center justify-center bg-[#F9FAFB] dark:bg-black h-screen">
-        <div
-          className="max-w-screen-xl items-center h-full w-full grid grid-cols-1 gap-4 p-10 md:grid-cols-2 md:gap-20"
-        >
+        <div className="max-w-screen-xl items-center h-full w-full grid grid-cols-1 gap-4 p-10 md:grid-cols-2 md:gap-20">
           <div className="w-full flex flex-row rounded-[10px] shadow-2xl bg-white p-10 dark:bg-[#1F2A37]">
             <div className="flex flex-col w-full">
               <CustomTypography
@@ -43,7 +41,7 @@ const AdminLogin = () => {
 
               <div className="flex items-center w-3/4 mb-4">
                 <CustomTypography
-                  size={'sm'}
+                  size={"sm"}
                   weight="bold"
                   className={`text-[#6B7280] dark:text-white mr-2`}
                   variant="h6"
@@ -53,7 +51,8 @@ const AdminLogin = () => {
 
                 <a
                   className="text-sm font-medium text-[#1C64F2] leading-[27px] hover:cursor-pointer"
-                  href="#">
+                  href="#"
+                >
                   Here
                 </a>
               </div>
@@ -73,13 +72,13 @@ const AdminLogin = () => {
                   validateOnMount
                 >
                   {({
-                      handleChange,
-                      errors,
-                      values,
-                      isSubmitting,
-                      touched,
-                      isValid,
-                    }) => {
+                    handleChange,
+                    errors,
+                    values,
+                    isSubmitting,
+                    touched,
+                    isValid,
+                  }) => {
                     return (
                       <Form
                         onSubmit={(e) => {
@@ -115,7 +114,9 @@ const AdminLogin = () => {
                                 <FaEyeSlash
                                   size={20}
                                   color={
-                                    touched.email && errors?.email ? "red" : "white"
+                                    touched.email && errors?.email
+                                      ? "red"
+                                      : "white"
                                   }
                                   onClick={handleShowPassword}
                                 />
@@ -123,7 +124,9 @@ const AdminLogin = () => {
                                 <FaEye
                                   size={20}
                                   color={
-                                    touched.email && errors?.email ? "red" : "white"
+                                    touched.email && errors?.email
+                                      ? "red"
+                                      : "white"
                                   }
                                   onClick={handleShowPassword}
                                 />
@@ -135,7 +138,7 @@ const AdminLogin = () => {
 
                         {/*OR*/}
                         <div className="flex flex-row w-full my-8 items-center">
-                          <div className="w-[45%] h-px bg-[#E5E7EB]"/>
+                          <div className="w-[45%] h-px bg-[#E5E7EB]" />
 
                           <CustomTypography
                             className={`w-10 text-center dark:text-white`}
@@ -145,7 +148,7 @@ const AdminLogin = () => {
                             or
                           </CustomTypography>
 
-                          <div className="w-[45%] h-px bg-[#E5E7EB]"/>
+                          <div className="w-[45%] h-px bg-[#E5E7EB]" />
                         </div>
 
                         {/*Login with Google*/}
@@ -153,12 +156,7 @@ const AdminLogin = () => {
                           variant="outlined"
                           className={`text-[#111928] font-medium border-black items-center justify-center dark:text-white my-3`}
                           fullWidth={true}
-                          startIcon={
-                            <FcGoogle
-                              size={20}
-                              className={`mr-2`}
-                            />
-                          }
+                          startIcon={<FcGoogle size={20} className={`mr-2`} />}
                           colorScheme="none"
                         >
                           Login with Google
@@ -169,12 +167,7 @@ const AdminLogin = () => {
                           variant="outlined"
                           className={`text-[#111928] font-medium border-black items-center justify-center dark:text-white my-3`}
                           fullWidth={true}
-                          startIcon={
-                            <GrGithub
-                              size={20}
-                              className={`mr-2`}
-                            />
-                          }
+                          startIcon={<GrGithub size={20} className={`mr-2`} />}
                           colorScheme="none"
                         >
                           Login with Github
@@ -182,7 +175,8 @@ const AdminLogin = () => {
 
                         {/*RememberMe*/}
                         <div
-                          className={`w-full grid grid-cols-2 gap-4 items-center my-2`}>
+                          className={`w-full grid grid-cols-2 gap-4 items-center my-2`}
+                        >
                           <CustomCheckBox
                             label="Remember Me"
                             name="rememberMe"
@@ -220,15 +214,12 @@ const AdminLogin = () => {
           </div>
 
           <div className="w-full flex-row justify-center hidden md:flex">
-            <img
-              src={LoginImage}
-              alt={`Login Page`}
-            />
+            <img src={LoginImage} alt={`Login Page`} />
           </div>
         </div>
       </div>
 
-      <ToasterConfig/>
+      <ToasterConfig />
     </Fragment>
   );
 };

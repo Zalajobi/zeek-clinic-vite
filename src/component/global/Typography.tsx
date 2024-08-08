@@ -1,6 +1,6 @@
-import {Typography} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import clsx from "clsx";
-import {Fragment, ReactNode} from "react";
+import { Fragment, ReactNode } from "react";
 import { asType } from "@material-tailwind/react/types/components/typography";
 import {
   lineClamp,
@@ -128,15 +128,19 @@ export const CustomTypography = ({
         </Typography>
       )}
     </Fragment>
-  )
+  );
 };
 
 interface TypographySkeletonProps {
   className?: string;
 }
 
-export const TypographySkeleton = ({ className = "" }: TypographySkeletonProps) => {
+export const TypographySkeleton = ({
+  className = "",
+}: TypographySkeletonProps) => {
   return (
-    <p className={`ml-3 animate-pulse w-full min-w-[70px] h-4 bg-gray-200 rounded-md dark:bg-gray-700 ${className}`}></p>
+    <p
+      className={`ml-3 animate-pulse w-full min-w-[70px] h-4 bg-gray-200 rounded-md dark:bg-gray-700 ${className}`}
+    ></p>
   );
 };

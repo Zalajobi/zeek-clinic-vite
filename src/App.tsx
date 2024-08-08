@@ -1,5 +1,5 @@
 import { Card } from "@material-tailwind/react";
-import {CustomTypography} from "@component/global/Typography";
+import { CustomTypography } from "@component/global/Typography";
 
 export default function App() {
   return (

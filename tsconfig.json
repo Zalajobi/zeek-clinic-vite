@@ -31,11 +31,11 @@
       "@schema/*": ["schema/*"],
       "@asset/*": ["asset/*"]
     },
-        "plugins": [
-          {
-            "name": "typescript-tslint-plugin"
-          }
-        ]
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
