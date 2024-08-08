@@ -1,5 +1,5 @@
-import { createElement, Fragment, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { createElement, Fragment, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Avatar,
   Menu,
@@ -9,11 +9,11 @@ import {
   Tab,
   Tabs,
   TabsHeader,
-} from '@material-tailwind/react';
-import { HiChevronDown } from 'react-icons/hi';
-import { FaChevronDown } from 'react-icons/fa';
-import {CustomTypography} from "@component/global/Typography";
-import {CustomButton} from "@component/global/Buttons";
+} from "@material-tailwind/react";
+import { HiChevronDown } from "react-icons/hi";
+import { FaChevronDown } from "react-icons/fa";
+import { CustomTypography } from "@component/global/Typography";
+import { CustomButton } from "@component/global/Buttons";
 
 interface ProfileMenuProps {
   menuItems: {
@@ -38,18 +38,18 @@ interface DropDownMenuProps {
   value: string | number;
   menuItems: any[];
   placement?:
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
+    | "top"
+    | "top-start"
+    | "top-end"
+    | "bottom"
+    | "bottom-start"
+    | "bottom-end"
+    | "right"
+    | "right-start"
+    | "right-end"
+    | "left"
+    | "left-start"
+    | "left-end";
   change: (item: any) => void;
   buttonClass?: string;
 }
@@ -60,10 +60,7 @@ export const ProfileMenu = ({ menuItems, profileImg }: ProfileMenuProps) => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <Menu
-      open={isMenuOpen}
-      handler={setIsMenuOpen}
-      placement="bottom-end">
+    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
         <CustomButton
           variant="text"
@@ -82,7 +79,7 @@ export const ProfileMenu = ({ menuItems, profileImg }: ProfileMenuProps) => {
           <HiChevronDown
             strokeWidth={2.5}
             className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? 'rotate-180' : ''
+              isMenuOpen ? "rotate-180" : ""
             }`}
           />
         </CustomButton>
@@ -101,17 +98,18 @@ export const ProfileMenu = ({ menuItems, profileImg }: ProfileMenuProps) => {
               }}
               className={`flex items-center gap-2 rounded ${
                 isLastItem
-                  ? 'hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10'
-                  : 'hover:bg-gray-500/10 focus:bg-gray-500/10 active:bg-gray-500/10'
-              }`}>
+                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                  : "hover:bg-gray-500/10 focus:bg-gray-500/10 active:bg-gray-500/10"
+              }`}
+            >
               {createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? 'text-red-500' : ''}`,
+                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
                 strokeWidth: 1,
               })}
 
               <CustomTypography
                 variant={`span`}
-                className={`${isLastItem ? 'text-red' : 'inherit'}`}
+                className={`${isLastItem ? "text-red" : "inherit"}`}
                 weight="normal"
               >
                 {label}
@@ -129,23 +127,23 @@ export const CustomTabSelector = ({
   onClick,
   className,
 }: CustomTabSelectorProps) => {
-  const [orientation, setOrientation] = useState('horizontal');
+  const [orientation, setOrientation] = useState("horizontal");
 
   useEffect(() => {
     // Function to check and update the orientation based on screen width
     const checkOrientation = () => {
       if (window.innerWidth >= 760) {
-        setOrientation('horizontal');
+        setOrientation("horizontal");
       } else {
-        setOrientation('vertical');
+        setOrientation("vertical");
       }
     };
 
     // Check Orientation
     checkOrientation();
-    window.addEventListener('resize', checkOrientation);
+    window.addEventListener("resize", checkOrientation);
 
-    return () => window.removeEventListener('resize', checkOrientation);
+    return () => window.removeEventListener("resize", checkOrientation);
   }, []);
 
   return (
@@ -154,8 +152,9 @@ export const CustomTabSelector = ({
         value={tabItems[0].value}
         orientation={orientation}
         className={`w-full md:w-max rounded-lg bg-gray-100 ${
-          className ? className : ''
-        }`}>
+          className ? className : ""
+        }`}
+      >
         {/*// @ts-ignore*/}
         <TabsHeader>
           {tabItems.map(({ label, value, icon }) => (
@@ -164,10 +163,11 @@ export const CustomTabSelector = ({
               key={value}
               value={value}
               onClick={() => onClick(value)}
-              className={`cursor-pointer`}>
+              className={`cursor-pointer`}
+            >
               {icon ? (
                 <div className={`flex items-center gap-2`}>
-                  {createElement(icon, { className: 'w-5 h-5' })}
+                  {createElement(icon, { className: "w-5 h-5" })}
                 </div>
               ) : (
                 <>&nbsp;&nbsp;{label}&nbsp;&nbsp;</>
@@ -183,7 +183,7 @@ export const CustomTabSelector = ({
 export const DropdownMenu = ({
   value,
   menuItems,
-  placement = 'bottom',
+  placement = "bottom",
   change,
   buttonClass,
 }: DropDownMenuProps) => {
@@ -194,19 +194,20 @@ export const DropdownMenu = ({
       open={openMenu}
       handler={setOpenMenu}
       animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
-      placement={placement}>
+      placement={placement}
+    >
       <MenuHandler>
         <CustomButton
-          variant={'outlined'}
+          variant={"outlined"}
           className={`flex items-center gap-3 text-base font-normal capitalize tracking-normal justify-center
           ${buttonClass}`}
           colorScheme="none"
         >
-          {value}{' '}
+          {value}{" "}
           <FaChevronDown
             strokeWidth={2.5}
             className={`h-2.5 w-2.5 transition-transform 
-            ${openMenu ? 'rotate-180' : ''}`}
+            ${openMenu ? "rotate-180" : ""}`}
           />
         </CustomButton>
       </MenuHandler>
@@ -219,8 +220,9 @@ export const DropdownMenu = ({
             onClick={() => change(item)}
             key={item}
             className={
-              'my-2 hover:bg-gray-500/10 focus:bg-gray-500/10 active:bg-gray-500/10'
-            }>
+              "my-2 hover:bg-gray-500/10 focus:bg-gray-500/10 active:bg-gray-500/10"
+            }
+          >
             {item}
           </MenuItem>
         ))}

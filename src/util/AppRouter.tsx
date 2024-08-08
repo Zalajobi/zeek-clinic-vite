@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "@page/Index";
 import Dashboard from "@page/admin/Dashboard";
 import AdminLogin from "@page/auth/AdminLogin";
@@ -8,16 +8,16 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<HomePage />} />
 
         {/*Admin Route*/}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminDashboard/>}>
-          <Route index element={<Dashboard/>}/>
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route index element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default AppRouter;

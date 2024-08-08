@@ -27,5 +27,5 @@ export type AdminResponsePayload = {
   religion: string;
   maritalStatus: string;
   id: string;
-  createdAt: Date
-}
+  createdAt: Date;
+};
