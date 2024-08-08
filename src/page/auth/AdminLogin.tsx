@@ -11,6 +11,7 @@ import {FcGoogle} from "react-icons/fc";
 import {GrGithub} from "react-icons/gr";
 // @ts-ignore
 import LoginImage from "@asset/svg/SignIn.svg"
+import {ToasterConfig} from "@component/global/Toast";
 
 const AdminLogin = () => {
   const {
@@ -226,6 +227,8 @@ const AdminLogin = () => {
           </div>
         </div>
       </div>
+
+      <ToasterConfig/>
     </Fragment>
   );
 };

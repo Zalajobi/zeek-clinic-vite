@@ -5,8 +5,8 @@ import { APIResponsePayload } from "@type/payloads.types";
 
 const userInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: 20000,
-  // withCredentials: true,
+  timeout: 7500,
+  withCredentials: true,
 });
 
 userInstance.interceptors.request.use(async (config) => {

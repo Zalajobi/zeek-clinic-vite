@@ -6,12 +6,8 @@ import { LoginRequestSchema } from "@schema/auth";
 
 export const useAdminLogin = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("Johndoe@gmail.com");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [password, setPassword] = useState(`********`);
-  const [rememberMe, setRememberMe] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("");
 
   const initialValue: LoginRequestSchema = {
     email: "",
@@ -19,40 +15,30 @@ export const useAdminLogin = () => {
     rememberMe: false,
   };
 
-  const handleLogin = async (data:LoginRequestSchema) => {
-    console.log(data)
-    // const response = await axiosPostRequestHandler("/account/admin/login", {
-    //   email,
-    //   password,
-    // });
-    //
-    // setResponseMessage(response?.message as string);
-    //
-    // if (response?.success) {
-    //   toast.success(response?.message);
-    //   localStorage.setItem("role", response.data.role);
-    //   setTimeout(() => {
-    //     navigate("/admin");
-    //   }, 3000);
-    // } else {
-    //   toast.error(response?.message);
-    // }
+  const handleLogin = async (payload:LoginRequestSchema) => {
+    setIsLoading((cur) => !cur);
+    const { data, message, success } = await axiosPostRequestHandler("/account/admin/login", payload);
+
+    if (success) {
+      toast.success(message);
+      setIsLoading((cur) => !cur);
+      localStorage.setItem("role", data.role);
+      setTimeout(() => {
+        navigate("/admin");
+      }, 3000);
+    } else {
+      setIsLoading((cur) => !cur);
+      toast.error(message);
+    }
   };
 
   const handleShowPassword = () => setShowPassword((cur) => !cur);
 
   return {
-    email,
-    password,
-    rememberMe,
-    responseMessage,
     initialValue,
     showPassword,
     isLoading,
 
-    setEmail,
-    setPassword,
-    setRememberMe,
     handleLogin,
     handleShowPassword,
   };
