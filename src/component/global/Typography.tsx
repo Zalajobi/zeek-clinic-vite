@@ -1,7 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import clsx from "clsx";
 import { Fragment, ReactNode } from "react";
-import { asType } from "@material-tailwind/react/types/components/typography";
+import { asType, color } from "@material-tailwind/react/types/components/typography";
 import {
   lineClamp,
   textAlign,
@@ -58,6 +58,7 @@ interface CustomTypographyProps {
   skeletonClassName?: string;
   isVariant?: boolean;
   onClick?: () => void;
+  color?: color;
 }
 
 interface TypographySkeletonProps {
@@ -101,6 +102,7 @@ export const CustomTypography = ({
   skeletonClassName = "",
   className = "",
   onClick,
+  color,
 }: CustomTypographyProps) => {
   const classes = clsx(
     `text-[#0E0F17] text-xs text-[#6B7280] font-nunito ${className}`,
@@ -141,6 +143,7 @@ export const CustomTypography = ({
           as={variant}
           textGradient={isVariant}
           onClick={onClick}
+          color={color}
         >
           {iconBefore} {children} {iconAfter}
         </Typography>
