@@ -22,14 +22,14 @@ const AdminDashboard = () => {
       >
         <Sidebar siteId={adminData?.siteId ?? ""} />
       </div>
-      <div className="md:w-[70%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] ml-auto bg-white min-h-screen">
+      <div className="md:w-[70%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] ml-auto bg-[#f1f3f7] min-h-screen">
         <Header
           name={`${adminData?.title} ${adminData?.firstName} ${adminData?.lastName}`}
           role={adminData?.role ?? ""}
           profilePic={adminData?.profilePic}
         />
 
-        <div className="p-10 bg-[#f1f3f7] h-full w-full">
+        <div className="p-10 h-full w-full">
           <Outlet />
         </div>
       </div>

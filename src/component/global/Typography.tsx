@@ -1,7 +1,10 @@
 import { Typography } from "@material-tailwind/react";
 import clsx from "clsx";
 import { Fragment, ReactNode } from "react";
-import { asType, color } from "@material-tailwind/react/types/components/typography";
+import {
+  asType,
+  color,
+} from "@material-tailwind/react/types/components/typography";
 import {
   lineClamp,
   textAlign,
@@ -65,7 +68,7 @@ interface TypographySkeletonProps {
   className?: string;
 }
 
-interface IntegerTypographyProps extends CustomTypographyProps{
+interface IntegerTypographyProps extends CustomTypographyProps {
   children: number;
   separator: string;
   start?: number;
@@ -184,15 +187,15 @@ export const IntegerTypography = ({
   skeletonClassName = "",
   className = "",
   onClick,
-  decimals=2,
-  separator=",",
-  start=0,
-  delay=0.4,
-  duration=2,
+  decimals = 2,
+  separator = ",",
+  start = 0,
+  delay = 0.4,
+  duration = 2,
   onEnd,
   onStart,
-  prefix="",
-  suffix="",
+  prefix = "",
+  suffix = "",
 }: IntegerTypographyProps) => {
   const classes = clsx(
     `text-[#0E0F17] text-xs text-[#6B7280] font-nunito ${className}`,
@@ -254,5 +257,5 @@ export const IntegerTypography = ({
         )}
       </Fragment>
     </Fragment>
-  )
-}
+  );
+};

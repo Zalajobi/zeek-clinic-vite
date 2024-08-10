@@ -1,7 +1,11 @@
-import {Fragment} from "react";
-import {color, size, variant} from "@material-tailwind/react/types/components/progress";
-import {Progress} from "@material-tailwind/react";
-import {CustomTypography} from "@component/global/Typography";
+import { Fragment } from "react";
+import {
+  color,
+  size,
+  variant,
+} from "@material-tailwind/react/types/components/progress";
+import { Progress } from "@material-tailwind/react";
+import { CustomTypography } from "@component/global/Typography";
 
 interface BasicProgressProps {
   value: number;
@@ -13,8 +17,14 @@ interface BasicProgressProps {
   isLoading?: boolean;
 }
 
-
-export const InlineProgress = ({value, isLoading=false, label, size="md", color, className=""}: BasicProgressProps) => {
+export const InlineProgress = ({
+  value,
+  isLoading = false,
+  label,
+  size = "md",
+  color,
+  className = "",
+}: BasicProgressProps) => {
   return (
     <Fragment>
       {/*// @ts-ignore*/}
@@ -27,9 +37,16 @@ export const InlineProgress = ({value, isLoading=false, label, size="md", color,
       />
     </Fragment>
   );
-}
+};
 
-export const OutlineProgress = ({value, isLoading=false, label, size="md", color, className=""}: BasicProgressProps) => {
+export const OutlineProgress = ({
+  value,
+  isLoading = false,
+  label,
+  size = "md",
+  color,
+  className = "",
+}: BasicProgressProps) => {
   return (
     <Fragment>
       <div className="w-full">
@@ -53,4 +70,4 @@ export const OutlineProgress = ({value, isLoading=false, label, size="md", color
       </div>
     </Fragment>
   );
-}
+};

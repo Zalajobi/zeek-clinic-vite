@@ -51,7 +51,7 @@ const Header = ({ name, role, profilePic }: HeaderProps) => {
     <Fragment>
       {/*// @ts-ignore*/}
       <Navbar
-        className={`flex justify-between sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4`}
+        className={`flex justify-between bg-white sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4`}
       >
         <div className="relative flex gap-2">
           <TextInput
