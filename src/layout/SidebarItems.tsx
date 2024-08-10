@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from "react";
 import {
   Accordion,
   AccordionBody,
@@ -6,11 +6,11 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-} from '@material-tailwind/react';
-import { Link } from 'react-router-dom';
-import { FiChevronDown } from 'react-icons/fi';
-import {CustomTypography} from "@component/global/Typography";
-import {SidebarItemProps} from "@type/index.types";
+} from "@material-tailwind/react";
+import { Link } from "react-router-dom";
+import { FiChevronDown } from "react-icons/fi";
+import { CustomTypography } from "@component/global/Typography";
+import { SidebarItemProps } from "@type/index.types";
 
 const SidebarItems = ({ item, Icon, route, child }: SidebarItemProps) => {
   const [show, setShow] = useState(0);
@@ -28,9 +28,9 @@ const SidebarItems = ({ item, Icon, route, child }: SidebarItemProps) => {
 
     // Check Orientation on a load
     checkOrientation();
-    window.addEventListener('resize', checkOrientation);
+    window.addEventListener("resize", checkOrientation);
 
-    return () => window.removeEventListener('resize', checkOrientation);
+    return () => window.removeEventListener("resize", checkOrientation);
   }, []);
 
   const handleOpen = (value: number) => {
@@ -42,13 +42,14 @@ const SidebarItems = ({ item, Icon, route, child }: SidebarItemProps) => {
       {!child ? (
         <Link
           to={route ?? `/admin`}
-          className={`${isMobile ? 'w-[6rem]' : ''}`}>
+          className={`${isMobile ? "w-[6rem]" : ""}`}
+        >
           {/*// @ts-ignore*/}
           <ListItem>
             {/*// @ts-ignore*/}
             <ListItemPrefix>{Icon}</ListItemPrefix>
             <CustomTypography
-              className={`text-md font-bold ${isMobile ? 'hidden' : 'flex'}`}
+              className={`text-md font-bold ${isMobile ? "hidden" : "flex"}`}
               variant={`span`}
             >
               {item ?? `Dashboard`}
@@ -60,20 +61,20 @@ const SidebarItems = ({ item, Icon, route, child }: SidebarItemProps) => {
         <Accordion
           open={show === 1}
           icon={<FiChevronDown />}
-          className={`${isMobile ? 'w-[6rem]' : ''}`}>
+          className={`${isMobile ? "w-[6rem]" : ""}`}
+        >
           {/*// @ts-ignore*/}
-          <ListItem
-            className="p-0"
-            selected={show === 1}>
+          <ListItem className="p-0" selected={show === 1}>
             {/*// @ts-ignore*/}
             <AccordionHeader
               onClick={() => handleOpen(1)}
-              className="border-b-0">
+              className="border-b-0"
+            >
               {/*// @ts-ignore*/}
               <ListItemPrefix>{Icon}</ListItemPrefix>
               <CustomTypography
                 className={`text-md font-bold mr-auto ${
-                  isMobile ? 'hidden' : 'flex'
+                  isMobile ? "hidden" : "flex"
                 }`}
                 variant={`span`}
               >
@@ -97,7 +98,7 @@ const SidebarItems = ({ item, Icon, route, child }: SidebarItemProps) => {
 
                           <CustomTypography
                             className={`hover:!no-underline ${
-                              isMobile ? 'hidden' : 'flex'
+                              isMobile ? "hidden" : "flex"
                             }`}
                             variant={`span`}
                             weight="bold"

@@ -1,17 +1,20 @@
-import {FC, Fragment} from "react";
+import { Fragment } from "react";
 import { Card, List } from "@material-tailwind/react";
 import SidebarHeader from "@layout/admin/SidebarHeader";
-import {AdminSideBarItems} from "@component/routes";
-import {SidebarItemProps} from "@type/index.types";
+import { AdminSideBarItems } from "@component/routes";
+import { SidebarItemProps } from "@type/index.types";
 import SidebarItems from "@layout/SidebarItems";
-// import {ADMIN_ROUTES} from "@util/constants";
 
-const Sidebar: FC = () => {
-  const sidebarItems = AdminSideBarItems("0cd5e370-d3eb-42ae-b868-1ebf7f055098");
+interface SidebarProps {
+  siteId: string;
+}
+
+const Sidebar = ({ siteId }: SidebarProps) => {
+  const sidebarItems = AdminSideBarItems(siteId);
 
   return (
     // @ts-ignore
-    <Card className="h-screen w-full p-4 shadow-xl shadow-blue-gray-900/5 bg-pry rounded-none">
+    <Card className="h-full w-full p-4 shadow-xl shadow-blue-gray-900/5 bg-pry rounded-none">
       <SidebarHeader />
 
       {/*// @ts-ignore*/}
@@ -19,7 +22,9 @@ const Sidebar: FC = () => {
         {sidebarItems.length >= 1 &&
           sidebarItems.map((sidebar: SidebarItemProps, idx: number) => {
             return (
-              <Fragment key={`${idx}_${sidebar.item}_${sidebar.route}_${sidebar.Icon}`}>
+              <Fragment
+                key={`${idx}_${sidebar.item}_${sidebar.route}_${sidebar.Icon}`}
+              >
                 <SidebarItems
                   item={sidebar?.item}
                   route={sidebar?.route}

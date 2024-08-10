@@ -1,10 +1,12 @@
-import {Fragment} from "react";
-import AdminDashboard from "@layout/admin/AdminDashboard";
+import { Fragment } from "react";
+import ActivitySummary from "@component/admin/dashboard/ActivitySummary";
 
 const Dashboard = () => {
   return (
     <Fragment>
-      <AdminDashboard/>
+      <div className="flex flex-col w-full">
+        <ActivitySummary />
+      </div>
     </Fragment>
   );
 };

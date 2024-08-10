@@ -1,0 +1,48 @@
+/*Rajdhani*/
+@font-face {
+  font-family: "rajdhani";
+  src: url("/src/asset/font/rajdhani/Rajdhani-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rajdhani";
+  src: url("/src/asset/font/rajdhani/Rajdhani-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rajdhani";
+  src: url("/src/asset/font/rajdhani/Rajdhani-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rajdhani";
+  src: url("/src/asset/font/rajdhani/Rajdhani-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rajdhani";
+  src: url("/src/asset/font/rajdhani/Rajdhani-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*Nunito*/
+@font-face {
+  font-family: "nunito";
+  src: url("/src/asset/font/nunito/NunitoSans-italic.ttf") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("/src/asset/font/nunito/NunitoSans-nonItalic.ttf") format("truetype");
+  font-style: normal;
+}

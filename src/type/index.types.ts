@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
 export interface SidebarItemProps {
   item: string;
@@ -12,4 +12,11 @@ interface ChildSidebarItemProps {
   Icon: ReactNode;
   route?: string;
   showSidebar?: boolean;
+}
+
+export interface SvgItemProps {
+  fill?: string;
+  size?: number;
+  width?: number;
+  height?: number;
 }
